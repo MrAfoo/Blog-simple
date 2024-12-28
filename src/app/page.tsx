@@ -1,101 +1,82 @@
+import Link from "next/link";
 import Image from "next/image";
+import styles from "./home.module.css";
+import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="relative min-h-screen bg-cover bg-center flex justify-center items-center">
+      {/* Background Image */}
+      <div className=" inset-0">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/nature.jpg"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          className="opacity-100"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
+
+        {/* Main Heading */}
+        <h1
+          className={`text-2xl text-gray-300 font-bold mb-8 mt-8 text-center sm:text-3xl md:text-5xl ${styles.typewriter}`}
+        >
+          Explore the Beauty of Nature
+        </h1>
+
+        {/* Subheading */}
+        <h2 className="text-xl md:text-md lg:text-md text-gray-200 font-semibold mb-2 text-center">
+        Blooming with Nature’s Beauty and Serenity
+        </h2>
+
+        {/* Text */}
+        <p className=" text-gray-300 mb-6 mt-2 text-center max-w-lg text-md md:text-md lg:text-md">
+        Explore the beauty of nature with in-depth insights, tips, and expert advice on the wonders of flora and the environment.
+        </p>
+
+        {/* Social Media Icons */}
+        <div className="flex space-x-6 mb-6 text-gray-300">
+          <Link
+            href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-green-600 transition duration-300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            <FaGithub className="text-2xl sm:text-4xl transform hover:scale-110" />
+          </Link>
+          <Link
+            href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-green-600 transition duration-300"
           >
-            Read our docs
-          </a>
+            <FaTwitter className="text-2xl sm:text-4xl transform hover:scale-110" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-600 transition duration-300"
+          >
+            <FaLinkedin className="text-2xl sm:text-4xl transform hover:scale-110" />
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Button */}
+        <Link
+          href="/blogs"
+          className="px-6 py-2 text-sm text-gray-300 bg-green-600 rounded-xl hover:bg-[#6d3535]/10 transition duration-300 text-center font-bold"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          Explore Blogs
+        </Link>
+      </div>
     </div>
   );
 }
