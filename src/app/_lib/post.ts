@@ -1,5 +1,5 @@
 
-import CommentBox from "./comment";
+
 export interface Reply {
     id: number;
     content: string;
